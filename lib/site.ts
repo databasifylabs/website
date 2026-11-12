@@ -205,7 +205,7 @@ export const FAQ = [
   },
   {
     q: 'Which engines does it support?',
-    a: 'PostgreSQL 17 and 18, MySQL 8.4 and 9.7, MariaDB 11.4 and 11.8, MongoDB 7.0, 8.0 and 9.0, Valkey 8 and 9, and Redis 8.',
+    a: 'PostgreSQL 15, 16, 17 and 18, MySQL 8.4 and 9.7, MariaDB 10.11, 11.4, 11.8 and 12.3, MongoDB 7.0, 8.0 and 9.0, Valkey 7, 8 and 9, and Redis 7.2 and 8.',
   },
   {
     q: 'Do I need my own servers?',
