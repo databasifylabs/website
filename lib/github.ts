@@ -20,10 +20,3 @@ export async function fetchStarCount(repo: string, fetcher: typeof fetch = fetch
     return null;
   }
 }
-
-export function placeholderStarCount(value: string | undefined): number | null {
-  if (value === undefined || !/^\d+$/.test(value)) {
-    return null;
-  }
-  return Number(value);
-}

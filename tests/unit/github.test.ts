@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { fetchStarCount, placeholderStarCount } from '@/lib/github';
+import { fetchStarCount } from '@/lib/github';
 
 function mockFetch(status: number, body: unknown): typeof fetch {
   return () => Promise.resolve(new Response(JSON.stringify(body), { status }));
@@ -33,15 +33,5 @@ describe('fetchStarCount', () => {
 
     expect(request?.url).toBe('https://api.github.com/repos/databasifylabs/databasify');
     expect(request?.signal).toBeInstanceOf(AbortSignal);
-  });
-});
-
-describe('placeholderStarCount', () => {
-  it('reads a whole number', () => {
-    expect(placeholderStarCount('1234')).toBe(1234);
-  });
-
-  it.each([[undefined], [''], ['abc'], ['-5'], ['1.5']])('returns null for %j', (value) => {
-    expect(placeholderStarCount(value)).toBeNull();
   });
 });

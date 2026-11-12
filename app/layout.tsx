@@ -3,7 +3,7 @@ import { Instrument_Sans, JetBrains_Mono } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 import { Footer } from "@/components/sections/footer";
 import { Header } from "@/components/sections/header";
-import { fetchStarCount, placeholderStarCount } from "@/lib/github";
+import { fetchStarCount } from "@/lib/github";
 import { GITHUB_REPO, OG_IMAGE, SITE_TITLE, SITE_URL, TAGLINE } from "@/lib/site";
 import "./globals.css";
 
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
 };
 
 export default async function RootLayout({ children }: LayoutProps<"/">) {
-  const stars = (await fetchStarCount(GITHUB_REPO)) ?? placeholderStarCount(process.env.PLACEHOLDER_STAR_COUNT);
+  const stars = await fetchStarCount(GITHUB_REPO);
 
   return (
     <html
