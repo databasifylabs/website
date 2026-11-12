@@ -10,7 +10,6 @@ import { CTA_LABELS, LINKS } from "@/lib/site";
 
 const NAV_LINKS = [
   { label: "Features", href: "#features" },
-  { label: "Engines", href: "#engines" },
   { label: "FAQ", href: "#faq" },
   { label: "Docs", href: LINKS.docs },
   { label: "GitHub", href: LINKS.github },

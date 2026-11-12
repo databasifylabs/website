@@ -6,7 +6,6 @@ test("header links", async ({ page }) => {
   const header = page.getByRole("banner");
   const expected = [
     ["Features", "#features"],
-    ["Engines", "#engines"],
     ["FAQ", "#faq"],
     ["Docs", LINKS.docs],
     ["GitHub", LINKS.github],

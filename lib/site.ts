@@ -26,15 +26,6 @@ export const LINKS = {
   license: `https://github.com/${GITHUB_REPO}/blob/0.x/LICENSE`,
 } as const;
 
-export const ENGINES = [
-  { id: 'postgres', name: 'PostgreSQL', versions: ['17', '18'], icon: '/icons/database-providers/postgres.svg' },
-  { id: 'mysql', name: 'MySQL', versions: ['8.4', '9.7'], icon: '/icons/database-providers/mysql.svg' },
-  { id: 'mariadb', name: 'MariaDB', versions: ['11.4', '11.8'], icon: '/icons/database-providers/mariadb.svg' },
-  { id: 'mongodb', name: 'MongoDB', versions: ['7.0', '8.0', '9.0'], icon: '/icons/database-providers/mongodb.svg' },
-  { id: 'valkey', name: 'Valkey', versions: ['8', '9'], icon: '/icons/database-providers/valkey.svg' },
-  { id: 'redis', name: 'Redis', versions: ['8'], icon: '/icons/database-providers/redis.svg' },
-] as const;
-
 export const FEATURES = [
   {
     title: 'Single node to HA cluster',

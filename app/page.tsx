@@ -1,5 +1,4 @@
 import { Comparison } from "@/components/sections/comparison";
-import { Engines } from "@/components/sections/engines";
 import { Faq } from "@/components/sections/faq";
 import { Features } from "@/components/sections/features";
 import { FinalCta } from "@/components/sections/final-cta";
@@ -11,7 +10,6 @@ export default function Home() {
   return (
     <main className="flex flex-1 flex-col">
       <Hero />
-      <Engines />
       <Features />
       <Tour />
       <HowItWorks />

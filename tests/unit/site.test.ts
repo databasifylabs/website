@@ -1,9 +1,6 @@
-import { existsSync } from 'node:fs';
-import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
 import {
   COMPARISON,
-  ENGINES,
   FAQ,
   FEATURES,
   HEADLINE,
@@ -17,17 +14,6 @@ import {
 } from '@/lib/site';
 
 describe('site content', () => {
-  it('lists the six engines with their version lines', () => {
-    expect(ENGINES.map((e) => [e.name, e.versions])).toEqual([
-      ['PostgreSQL', ['17', '18']],
-      ['MySQL', ['8.4', '9.7']],
-      ['MariaDB', ['11.4', '11.8']],
-      ['MongoDB', ['7.0', '8.0', '9.0']],
-      ['Valkey', ['8', '9']],
-      ['Redis', ['8']],
-    ]);
-  });
-
   it('uses the exact install command and links', () => {
     expect(INSTALL_COMMAND).toBe('curl -fsSL https://get.databasify.io/install.sh | sudo bash');
     expect(LINKS).toEqual({
@@ -62,12 +48,6 @@ describe('site content', () => {
       expect(all).not.toContain(bad);
     }
     expect(all).toContain('from a single node to a highly available cluster');
-  });
-
-  it('every icon path exists in public/', () => {
-    for (const icon of ENGINES.map((e) => e.icon)) {
-      expect(existsSync(join(process.cwd(), 'public', icon)), icon).toBe(true);
-    }
   });
 
   it('FAQ says PITR is not available for Valkey, Redis and MongoDB 9.0', () => {

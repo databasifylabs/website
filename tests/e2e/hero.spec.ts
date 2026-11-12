@@ -1,5 +1,5 @@
 import { expect, test } from "@playwright/test";
-import { CTA_LABELS, ENGINES, HEADLINE_LINES, HERO_PILL, INSTALL_COMMAND, LINKS, TAGLINE } from "../../lib/site";
+import { CTA_LABELS, HEADLINE_LINES, HERO_PILL, INSTALL_COMMAND, LINKS, TAGLINE } from "../../lib/site";
 
 test("hero shows the headline, calls to action and install command", async ({ page }) => {
   await page.goto("/");
@@ -52,13 +52,3 @@ for (const width of [320, 375]) {
     expect(await code.evaluate((element) => element.scrollWidth > element.clientWidth)).toBe(true);
   });
 }
-
-test("engines strip lists every engine with its versions", async ({ page }) => {
-  await page.goto("/");
-  const items = page.locator("#engines li");
-  await expect(items).toHaveCount(ENGINES.length);
-  for (const [index, engine] of ENGINES.entries()) {
-    await expect(items.nth(index)).toHaveText(`${engine.name} ${engine.versions.join(" · ")}`);
-    await expect(items.nth(index).getByRole("img", { name: engine.name })).toBeVisible();
-  }
-});
